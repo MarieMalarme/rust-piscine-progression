@@ -238,8 +238,9 @@ const create_commit_elem = (class_name, text, container) => {
 const fetch_data = async (url) => {
   const res = await fetch(url, init)
   if (res.status !== 200) {
+    document.querySelector('#loader-container').style.display = 'none'
     const no_data = document.createElement('div')
-    no_data.textContent = 'No data found!'
+    no_data.textContent = 'No data found! Try again a bit later.'
     body.append(no_data)
     return
   }
