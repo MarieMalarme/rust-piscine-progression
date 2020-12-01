@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 100px;
+  background: hsl(117, 0%, 8%);
+  color: var(--grey);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 20px;
+  font-weight: 100;
+}
+
+:root {
+  --grey: hsl(117, 0%, 90%);
+  --dark_grey: hsl(117, 0%, 40%);
+  --medium_grey: hsl(117, 0%, 65%);
+}
+
+.green {
+  color: var(--green);
+}
+
+.grey {
+  color: var(--grey);
+}
+
+.red {
+  color: var(--red);
+}
+
+.dark_grey {
+  color: var(--dark_grey);
+}
+
+#loader-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#loader {
+  width: 1px;
+  height: 1px;
+  background-color: rgba(225, 225, 225);
+  border-radius: 50%;
+  box-shadow: 0 0 50px 50px white;
+  animation: load 1.5s infinite ease-in-out;
+}
+
+@keyframes load {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(7.5);
+    opacity: 0;
+  }
+}
+
+@keyframes show-up {
+  0% {
+    opacity: 0;
+  }
+
+  33% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+#content {
+  display: none;
+}
+
+.animate {
+  animation: 0.5s fade-in;
+}
+
+#settings {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  right: 35px;
+  top: 35px;
+}
+
+.color {
+  position: relative;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.color .button {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+}
+
+.color #green {
+  background: var(--green);
+}
+
+.color #red {
+  background: var(--red);
+}
+
+.color:hover > .range {
+  display: flex;
+  animation: 0.5s fade-in;
+}
+
+.range {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-right: 15px;
+  display: none;
+  height: 30px;
+  align-items: center;
+  transform: rotate(-90deg);
+  transform-origin: 80px 80px;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#title {
+  margin-bottom: 100px;
+  font-weight: 200;
+  font-size: 50px;
+}
+
+.subtitle {
+  color: hsl(117, 0%, 40%);
+}
+
+.subtitle.margin {
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+}
+
+#exercises_stats {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 145px;
+}
+
+#exercises_stats #datas {
+  display: flex;
+  width: 60%;
+  margin-right: 40px;
+}
+
+#exercises_stats #datas .stat {
+  width: calc(100% / 3);
+  line-height: 1;
+}
+
+#exercises_stats #datas .stat .label {
+  margin-top: 20px;
+  text-transform: capitalize;
+}
+
+#exercises_stats #datas .stat .data {
+  font-size: 50px;
+}
+
+#exercises_graph {
+  margin-bottom: 125px;
+}
+
+.commit {
+  display: flex;
+  margin-bottom: 30px;
+  font-size: 17px;
+}
+
+.commit .author {
+  width: 20%;
+  margin-right: 70px;
+}
+
+.commit .message {
+  width: 70%;
+  margin-right: 70px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.commit .date {
+  width: 10%;
+  text-align: right;
+}
