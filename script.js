@@ -23,6 +23,9 @@ const init = {
   method: 'GET',
   mode: 'cors',
   cache: 'default',
+  headers: new Headers({
+    Authorization: `token ${process.env.TOKEN}`,
+  }),
 }
 
 const groupBy = (items, key) => {
