@@ -1,3 +1,4 @@
+// Try push force
 const root = document.documentElement
 const body = document.querySelector('body')
 const url_prefix = `https://api.github.com/repos/augusto-mantilla/rust-exercises`
