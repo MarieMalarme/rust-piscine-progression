@@ -66,7 +66,7 @@ const display_stats = (done_amount, review_amount, exercises_per_date) => {
 
   exercises_datas.map(({ type }, i) => {
     const stat = document.querySelector(`#${type} .data`)
-    stat.textContent = exercises_datas[i].amount
+      stat.textContent = Math.floor(exercises_datas[i].amount)
   })
 
   display_exercises_stats_graph(exercises_datas)
