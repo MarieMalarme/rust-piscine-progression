@@ -34,6 +34,10 @@ body {
   color: var(--dark_grey);
 }
 
+svg {
+  overflow: visible;
+}
+
 #loader-container {
   width: 100vw;
   height: 100vh;
